@@ -12,7 +12,10 @@ import com.example.api_service.model.dto.UserRegisterRequestDto;
 import com.example.api_service.repository.UserRepository;
 import com.example.api_service.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     
     private final UserRepository userRepository;
@@ -26,7 +29,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String login(LoginRequestDto loginRequestDto) {
-        
+        log.info("user login | email {}", loginRequestDto.getEmail());
+
         User user = userRepository.findByEmail(loginRequestDto.getEmail())
             .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
