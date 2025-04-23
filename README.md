@@ -2,7 +2,7 @@
 
 REST API-based Library Management System built with **Spring Boot**, featuring:
 
-- User Registration & Login (Session-Based Authentication)
+- User Registration
 - View and Search Books
 - Borrow and Return Books
 
